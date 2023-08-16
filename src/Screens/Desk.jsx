@@ -25,28 +25,31 @@ export default function Desk() {
   return (
     <>
       <Navbar />
-      <div className="d-flex flex-wrap justify-content-center my-5">
-        {deskNotes.length === 0 ? (
-          <h3 className="my-5">No desk notes yet...</h3>
-        ) : null}
-        {deskNotes.map((note) => (
-          <DeskNote
-            deskNote={note}
-            isDesk={true}
-            key={note.id}
-            showAlert={ShowAlert}
-          />
-        ))}
-      </div>
-      <div className="w-25 mx-auto">
-        <Alert
-          show={show}
-          onClose={() => setShow(false)}
-          variant="success"
-          className="text-center h-100 w-100 mx-auto"
-        >
-          <p>Sent to notes!</p>
-        </Alert>
+      <div className="bg-main">
+        <h2 className="mb-5 text-center pt-5">Desk</h2>
+        <div className="d-flex flex-wrap justify-content-center my-5">
+          {deskNotes.length === 0 ? (
+            <h3 className="my-5">No desk notes yet...</h3>
+          ) : null}
+          {deskNotes.map((note) => (
+            <DeskNote
+              deskNote={note}
+              isDesk={true}
+              key={note.id}
+              showAlert={ShowAlert}
+            />
+          ))}
+        </div>
+        <div className="w-25 mx-auto">
+          <Alert
+            show={show}
+            onClose={() => setShow(false)}
+            variant="success"
+            className="text-center h-100 w-100 mx-auto"
+          >
+            <p>Sent to notes!</p>
+          </Alert>
+        </div>
       </div>
     </>
   );

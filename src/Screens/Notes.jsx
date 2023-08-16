@@ -30,6 +30,7 @@ export default function Notes() {
   return (
     <>
       <Navbar />
+      <h2 className="my-5 text-center">Notes</h2>
       <div className="d-flex flex-wrap justify-content-center mt-5">
         {notes.length === 0 ? <h3 className="my-5">No notes yet...</h3> : null}
         {notes.map((note) => (

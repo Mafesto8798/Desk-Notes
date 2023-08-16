@@ -1,6 +1,12 @@
 body {
   margin: 0;
 }
+.bg-main {
+  background: #eee;
+}
+html {
+  background: #eee;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -26,6 +32,9 @@ code {
 }
 
 /* NAVBAR */
+.nav-link {
+  color: #eee !important;
+}
 .nav-link-selected {
   color: #316fb9;
 }
@@ -40,6 +49,9 @@ code {
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
 }
+.nav-bg {
+  background: #333;
+}
 
 /* DESKNOTE AND NOTES NOTE */
 .deskNote {
@@ -49,8 +61,7 @@ code {
   background: #edfafc;
   margin: 10px;
   padding: 20px;
-  height: 650px;
-  width: 450px;
+  height: auto;
   box-sizing: border-box;
 }
 .canEdit {
@@ -62,6 +73,8 @@ code {
     transform: rotate(1turn);
   }
 }
+
+/* DESKNOTE INFO */
 .note-title {
   background: #edfafc;
   text-align: center;
@@ -78,19 +91,18 @@ code {
   overflow: hidden;
   overflow-y: scroll;
   border: none;
+  white-space-collapse: preserve;
 }
 .note-preview-text-container-container {
   border: solid #494949 1px;
-  height: 75%;
+  height: 400px;
+  font-size: 1.3rem;
 }
 .note-preview-text {
   text-align: center;
-  font-size: 20px;
 }
 .note-btn {
   font-size: 1.6rem;
-  width: 8.2rem;
-  height: 3.2rem;
 }
 
 /* Alert */

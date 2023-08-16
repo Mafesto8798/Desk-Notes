@@ -90,8 +90,8 @@ export default function DeskNote({ deskNote, isDesk, showAlert }) {
       <div
         className={
           canEdit
-            ? "deskNote p-3 d-flex flex-column justify-content-start canEdit"
-            : "deskNote p-3 d-flex flex-column justify-content-start cannotEdit"
+            ? "deskNote p-3 d-flex flex-column justify-content-start canEdit col-10 col-lg-4"
+            : "deskNote p-3 d-flex flex-column justify-content-start cannotEdit col-10 col-lg-4"
         }
       >
         {canEdit ? (
@@ -108,7 +108,7 @@ export default function DeskNote({ deskNote, isDesk, showAlert }) {
         <div className="d-flex justify-content-center align-items-start note-preview-text-container-container p-0">
           {canEdit ? (
             <textarea
-              className="w-100 note-preview-text-container note-preview-text"
+              className="w-100 note-preview-text-container text-center p-0"
               id="textArea"
               style={{
                 resize: "none",
@@ -119,15 +119,17 @@ export default function DeskNote({ deskNote, isDesk, showAlert }) {
             ></textarea>
           ) : (
             <div className="note-preview-text-container">
-              <span className="note-preview-text">
-                <p>{deskNote.content ? deskNote.content : "empty"}</p>
+              <span>
+                <p className="note-preview-text">
+                  {deskNote.content ? deskNote.content : "empty"}
+                </p>
               </span>
             </div>
           )}
         </div>
         <span className="d-flex justify-content-between w-100 ">
           <button
-            className="btn btn-danger note-btn d-flex justify-content-center align-items-center mt-4 text-dark"
+            className="btn btn-danger note-btn d-flex justify-content-center align-items-center mt-4 text-dark "
             onClick={isDesk ? () => DeleteDeskNote() : () => DeleteNote()}
           >
             <i className="bi bi-trash3-fill text-light fs-2"></i>
