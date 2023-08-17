@@ -54,7 +54,7 @@ export default function App() {
   const [notes, setNotes] = useState([
     {
       id: uuidv4(),
-      title: "Poopie",
+      title: "Groceries",
       content: "Chicken Salad",
       priority: 1,
     },
