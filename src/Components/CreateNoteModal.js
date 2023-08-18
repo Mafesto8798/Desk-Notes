@@ -58,7 +58,7 @@ export default function CreateNoteModal() {
               <span className="d-flex flex-column">
                 <button
                   type="button"
-                  className="btn btn-primary m-3 text-light"
+                  className="btn btn-secondary m-3 text-light"
                   data-bs-dismiss="modal"
                   onClick={() => addToDesk()}
                 >
@@ -66,7 +66,7 @@ export default function CreateNoteModal() {
                 </button>
                 <button
                   type="button"
-                  className="btn btn-secondary m-3 text-light"
+                  className="btn btn-primary m-3 text-light"
                   data-bs-dismiss="modal"
                   onClick={() => addToNotes()}
                 >

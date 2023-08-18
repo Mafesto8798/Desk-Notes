@@ -90,8 +90,8 @@ export default function DeskNote({ deskNote, isDesk, showAlert }) {
       <div
         className={
           canEdit
-            ? "deskNote p-3 d-flex flex-column justify-content-start canEdit col-10 col-lg-4"
-            : "deskNote p-3 d-flex flex-column justify-content-start cannotEdit col-10 col-lg-4"
+            ? "deskNote rounded p-3 d-flex flex-column justify-content-start canEdit col-10 col-lg-4"
+            : "deskNote rounded p-3 d-flex flex-column justify-content-start cannotEdit col-10 col-lg-4"
         }
       >
         {canEdit ? (
@@ -105,7 +105,7 @@ export default function DeskNote({ deskNote, isDesk, showAlert }) {
           <p className="text-center mb-3 note-title">{deskNoteTitle}</p>
         )}
 
-        <div className="d-flex justify-content-center align-items-start note-preview-text-container-container p-0">
+        <div className="d-flex justify-content-center align-items-start note-preview-text-container-container rounded p-2">
           {canEdit ? (
             <textarea
               className="w-100 note-preview-text-container text-center p-0"

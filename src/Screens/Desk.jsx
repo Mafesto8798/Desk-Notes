@@ -26,7 +26,7 @@ export default function Desk() {
     <>
       <Navbar />
       <div className="bg-main">
-        <h2 className="mb-5 text-center pt-5">Desk</h2>
+        <h2 className="pt-5 text-center">Desk</h2>
         <div className="d-flex flex-wrap justify-content-center my-5">
           {deskNotes.length === 0 ? (
             <h3 className="my-5">No desk notes yet...</h3>
