@@ -55,12 +55,10 @@ export default function PricingCalculator() {
     <>
       <Navbar />
       <div className="my-5 d-flex flex-column">
-        <h2 className="text-center mb-5">
-          Create Gigs and Caluclate Pricing
-        </h2>
+        <h2 className="text-center mb-5">Create Gigs and Caluclate Pricing</h2>
         <div className="w-100 d-flex flex-column flex-lg-row  justify-content-evenly align-items-center  mx-auto">
           {/* CREATE A NEW GIG */}
-          <div className="d-flex flex-column align-items-start justify-content-center p-4 inner-shadow my-4">
+          <div className="col-lg-3 col-10  d-flex flex-column align-items-start justify-content-center p-4 inner-shadow my-4">
             <h4 className="my-3 text-nowrap">Create a New Gig</h4>
             <label className="my-2 fw-bold">Gig Name</label>
             <input
@@ -86,7 +84,7 @@ export default function PricingCalculator() {
             </button>
           </div>
           {/* CALCULATE GIG PRICE */}
-          <div className="d-flex flex-column align-items-start justify-content-center p-4 inner-shadow my-4">
+          <div className="col-lg-3 col-10  d-flex flex-column align-items-start justify-content-center p-4 inner-shadow my-4">
             <h4 className="my-3 text-nowrap">Calculate Price</h4>
             <label className="my-2 fw-bold">Gig</label>
             <select
@@ -121,9 +119,9 @@ export default function PricingCalculator() {
           </div>
         </div>
       </div>
-      <span className="d-flex justify-content-center flex-column align-items-center pb-3">
-        <h3>Gig Price:</h3>
-        <h2 className=" my-3 fs-1 fw-bold text-success">{gigPrice}</h2>
+      <span className="d-flex justify-content-center  align-items-center pb-3">
+        <h3 style={{ color: "#666" }}>Gig Price:</h3>
+        <h2 className="px-1 fs-1 text-success">{gigPrice}</h2>
       </span>
       <div className="w-25 mx-auto">
         <Alert

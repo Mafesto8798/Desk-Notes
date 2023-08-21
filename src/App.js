@@ -43,21 +43,21 @@ export default function App() {
     },
   ];
   const [deskNotes, setDeskNotes] = useState([
-    {
-      id: uuidv4(),
-      title: "Chores",
-      content:
-        "1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.",
-      priority: 1,
-    },
+    // {
+    //   id: uuidv4(),
+    //   title: "Chores",
+    //   content:
+    //     "1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.1.Clean the office.",
+    //   priority: 1,
+    // },
   ]);
   const [notes, setNotes] = useState([
-    {
-      id: uuidv4(),
-      title: "Groceries",
-      content: "Chicken Salad",
-      priority: 1,
-    },
+    // {
+    //   id: uuidv4(),
+    //   title: "Groceries",
+    //   content: "Chicken Salad",
+    //   priority: 1,
+    // },
   ]);
   const [currentNote, setCurrentNote] = useState();
 

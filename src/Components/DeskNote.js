@@ -12,9 +12,9 @@ export default function DeskNote({ deskNote, isDesk, showAlert }) {
   const [deskNoteTitle, setDeskNoteTitle] = useState(deskNote.title);
   const [deskNoteContent, setDeskNoteContent] = useState(deskNote.content);
 
-  useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEY1, JSON.stringify(deskNotes));
-  }, [deskNotes]);
+  // useEffect(() => {
+  //   localStorage.setItem(LOCAL_STORAGE_KEY1, JSON.stringify(deskNotes));
+  // }, [deskNotes]);
 
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY2, JSON.stringify(notes));
@@ -49,9 +49,10 @@ export default function DeskNote({ deskNote, isDesk, showAlert }) {
     setNotes(newNotes);
   };
 
-  const DeleteDeskNote = () => {
+  const deleteDeskNote = () => {
     const newDeskNotes = deskNotes.filter((note) => note.id !== deskNote.id);
     setDeskNotes(newDeskNotes);
+    localStorage.setItem(LOCAL_STORAGE_KEY1, JSON.stringify(newDeskNotes));
   };
 
   const UpdateDeskNote = () => {
@@ -130,7 +131,7 @@ export default function DeskNote({ deskNote, isDesk, showAlert }) {
         <span className="d-flex justify-content-between w-100 ">
           <button
             className="btn btn-danger note-btn d-flex justify-content-center align-items-center mt-4 text-dark "
-            onClick={isDesk ? () => DeleteDeskNote() : () => DeleteNote()}
+            onClick={isDesk ? () => deleteDeskNote() : () => DeleteNote()}
           >
             <i className="bi bi-trash3-fill text-light fs-2"></i>
           </button>
