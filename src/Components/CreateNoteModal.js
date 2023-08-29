@@ -3,6 +3,9 @@ import { DeskNotesContext } from "../Context/DeskNotesContext";
 import { NotesContext } from "../Context/NotesContext";
 import { v4 as uuidv4 } from "uuid";
 
+const LOCAL_STORAGE_KEY1 = "deskNoteData";
+const LOCAL_STORAGE_KEY2 = "noteData";
+
 export default function CreateNoteModal() {
   const [noteContent, setNoteContent] = useState("");
   const [noteTitle, setNoteTitle] = useState("");
@@ -11,14 +14,18 @@ export default function CreateNoteModal() {
 
   const addToDesk = () => {
     const newNote = { id: uuidv4(), title: noteTitle, content: noteContent };
-    setDeskNotes([...deskNotes, newNote]);
+    const newDeskNotes = [...deskNotes, newNote];
+    localStorage.setItem(LOCAL_STORAGE_KEY1, JSON.stringify(newDeskNotes));
+    setDeskNotes(newDeskNotes);
     setNoteTitle("");
     setNoteContent("");
   };
 
   const addToNotes = () => {
     const newNote = { id: uuidv4(), title: noteTitle, content: noteContent };
-    setNotes([...notes, newNote]);
+    const newNotes = [...notes, newNote];
+    localStorage.setItem(LOCAL_STORAGE_KEY2, JSON.stringify(newNotes));
+    setNotes(newNotes);
     setNoteTitle("");
     setNoteContent("");
   };

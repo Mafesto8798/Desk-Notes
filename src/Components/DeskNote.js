@@ -12,23 +12,18 @@ export default function DeskNote({ deskNote, isDesk, showAlert }) {
   const [deskNoteTitle, setDeskNoteTitle] = useState(deskNote.title);
   const [deskNoteContent, setDeskNoteContent] = useState(deskNote.content);
 
-  // useEffect(() => {
-  //   localStorage.setItem(LOCAL_STORAGE_KEY1, JSON.stringify(deskNotes));
-  // }, [deskNotes]);
-
-  useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEY2, JSON.stringify(notes));
-  }, [notes]);
-
   const addToDesk = () => {
     const newNote = {
       id: deskNote.id,
       title: deskNoteTitle,
       content: deskNoteContent,
     };
-    setDeskNotes([...deskNotes, newNote]);
     const newNotes = notes.filter((note) => note.id !== deskNote.id);
+    const newDesk = [...deskNotes, newNote];
+    setDeskNotes(newDesk);
     setNotes(newNotes);
+    localStorage.setItem(LOCAL_STORAGE_KEY1, JSON.stringify(newDesk));
+    localStorage.setItem(LOCAL_STORAGE_KEY2, JSON.stringify(newNotes));
     showAlert();
   };
 
@@ -38,15 +33,19 @@ export default function DeskNote({ deskNote, isDesk, showAlert }) {
       title: deskNoteTitle,
       content: deskNoteContent,
     };
-    setNotes([...notes, newNote]);
     const newDesk = deskNotes.filter((note) => note.id !== deskNote.id);
+    const newNotes = [...notes, newNote];
     setDeskNotes(newDesk);
+    setNotes(newNotes);
+    localStorage.setItem(LOCAL_STORAGE_KEY2, JSON.stringify(newNotes));
+    localStorage.setItem(LOCAL_STORAGE_KEY1, JSON.stringify(newDesk));
     showAlert();
   };
 
   const DeleteNote = () => {
     const newNotes = notes.filter((note) => note.id !== deskNote.id);
     setNotes(newNotes);
+    localStorage.setItem(LOCAL_STORAGE_KEY2, JSON.stringify(newNotes));
   };
 
   const deleteDeskNote = () => {
@@ -63,6 +62,7 @@ export default function DeskNote({ deskNote, isDesk, showAlert }) {
         return note;
       }
     });
+    localStorage.setItem(LOCAL_STORAGE_KEY1, JSON.stringify(newDeskNotes));
     setDeskNotes(newDeskNotes);
     setCanEdit(false);
   };
@@ -74,6 +74,7 @@ export default function DeskNote({ deskNote, isDesk, showAlert }) {
         return note;
       }
     });
+    localStorage.setItem(LOCAL_STORAGE_KEY2, JSON.stringify(newNotes));
     setNotes(newNotes);
     setCanEdit(false);
   };
