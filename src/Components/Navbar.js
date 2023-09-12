@@ -62,6 +62,20 @@ export default function Navbar({ active }) {
                     Notes
                   </Link>
                 </li>
+                {/* One up games */}
+                {/* <li className="nav-item">
+                  <Link
+                    className={
+                      active === "notes"
+                        ? "nav-link  nav-link-selected mx-3"
+                        : "nav-link  mx-3"
+                    }
+                    to={"/oneup"}
+                  >
+                    OneUpGamesTest
+                  </Link>
+                </li> */}
+                {/* One up games */}
                 <button
                   className="btn btn-primary create-note my-2 my-sm-0 d-flex justify-content-evenly align-items-center fs-5 text-light "
                   type="button"

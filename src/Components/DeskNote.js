@@ -132,7 +132,9 @@ export default function DeskNote({ deskNote, isDesk, showAlert }) {
         <span className="d-flex justify-content-between w-100 ">
           <button
             className="btn btn-danger note-btn d-flex justify-content-center align-items-center mt-4 text-dark "
-            onClick={isDesk ? () => deleteDeskNote() : () => DeleteNote()}
+            data-bs-toggle="modal"
+            data-bs-target="#deleteNoteModal"
+            // onClick={isDesk ? () => deleteDeskNote() : () => DeleteNote()}
           >
             <i className="bi bi-trash3-fill text-light fs-2"></i>
           </button>
@@ -168,6 +170,20 @@ export default function DeskNote({ deskNote, isDesk, showAlert }) {
             </button>
           )}
         </span>
+      </div>
+
+      <div class="modal fade" id="deleteNoteModal" tabindex="-1" aria-labelledby="deleteModal" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body text-center my-3">
+              Are you sure you want to delete this note?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary text-light" data-bs-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-danger text-light" data-bs-dismiss="modal" onClick={isDesk ? () => deleteDeskNote() : () => DeleteNote()}>Delete Note</button>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );

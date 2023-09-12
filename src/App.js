@@ -7,6 +7,7 @@ import { NotesContext } from "./Context/NotesContext";
 import { CurrentNoteContext } from "./Context/CurrentNoteContext";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { v4 as uuidv4 } from "uuid";
+import OneUpGamesTest from "./Screens/OneUpGamesTest";
 
 export default function App() {
   const mockNotes = [
@@ -74,6 +75,10 @@ export default function App() {
       path: "/notes",
       element: <Notes />,
     },
+    {
+      path:'/oneup',
+      element:<OneUpGamesTest />,
+    }
   ]);
 
   return (

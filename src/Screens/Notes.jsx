@@ -18,9 +18,7 @@ export default function Notes() {
     }
   }, []);
 
-  useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(notes));
-  }, [notes]);
+
 
   const ShowAlert = () => {
     setShow(true);
